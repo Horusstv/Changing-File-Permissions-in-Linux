@@ -2,6 +2,30 @@
 
 ## In this exercise we are going to change permissions in linux of a couple of files and a directory.
 
+### Linux works with permissions using a 10 character string where we can see letters to describe what permissions are currently present in the file or directory and we can also see a dash "-" which describe that the permission is not present and for what users from the 3 available (user, group and other) this permissions exist.
+
+An example of the 10 character string is as follows.
+
+drwxrwxrwx
+
+The first letter corresponds to a directory or a file in this case since it is a "d" it is a directory.
+
+The next 3 letters correspond to the "user" in linux and the permissions it has in this case the user has r = read, w = write and x = execute permissions.
+The next 3 lettes correspond to the "group" and in this case the group has the exact same permissions than the user.
+The last 3 letters correspond to the "other" category and others are any other user that is not in the system.
+
+A different example would be the following.
+
+-rwxrwxrwx
+
+This string represents a file therefore the "d" at the beggining is not present, if you see any other "-" in the file it means that the permission is not present for example. 
+
+-rw-rw-rw-
+
+The above would be a string of permissions for a file where the execute permission is not present but read and write are.
+
+With this in mind we can complete the following tasks.
+
 ![image](https://imgur.com/hN4zpay.png)
 
 First we verify the permissions that are currently in place in the directory that we are working.
@@ -53,5 +77,7 @@ These are the innitial permissions of the draft directory, it is easier to spot 
 Now after using the command chmod g-x drafts and checking the permissions again we can see that the group execute permissions are gone from the directory and only the user permissions remain.
 
 ![image](https://imgur.com/o33sPMZ.png)
+
+In this exercise we learned about permissions in linux and how they operate, we also learned how to change them so selected users or groups have file access but others don't, this always with the purpose in mind of the "need to know" basis. This principle is basic when we try to protect organizations by making them more secure regarding the access the employees have to the data and information they manage every day.
 
 With this we conclude this simple exercise of changing permissions in Linux.
